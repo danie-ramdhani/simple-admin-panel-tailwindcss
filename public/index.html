@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard</title>
+
+    <link href=".././dist/css/output.css" rel="stylesheet" />
+  </head>
+  <body
+    class="h-screen overflow-hidden lg:pl-[20%] transition-all duration-300 text-default dark:text-default-reverse dark:bg-slate-800"
+  >
+    <!-- Scroll body -->
+    <div class="h-screen overflow-y-auto scrollbar-main">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="fixed overflow-y-auto scrollbar-main top-0 left-0 w-[70%] sm:w-[50%] md:w-[40%] z-50 h-screen transition duration-300 -translate-x-full lg:w-[20%] lg:translate-x-0 dark:bg-secondary bg-secondary-reverse"
+      >
+        <div
+          class="sticky top-0 flex items-center py-2 overflow-hidden shadow-[0_0_2px_0] bg-inherit shadow-primary dark:shadow-primary-reverse"
+        >
+          <!-- Toggle Sidebar (1) -->
+          <button type="button" class="p-4 toggle-sidebar lg:hidden">
+            <svg
+              class="w-8 h-8"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
+            <div class="sr-only">Toggle Sidebar</div>
+          </button>
+          <!-- End toggle sidebar (1) -->
+          <a
+            href="./index.html"
+            class="flex items-center w-full overflow-hidden gap-x-2 lg:justify-center lg:py-3"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
+              class="flex-shrink-0 object-contain w-12 h-12 rounded-full"
+              alt="Logo"
+            />
+            <span class="block text-lg font-semibold truncate"
+              >Company Name</span
+            >
+          </a>
+        </div>
+
+        <ul class="px-2 py-4 space-y-2 capitalize">
+          <li>
+            <button
+              type="button"
+              class="flex items-center w-full p-2 rounded-lg gap-x-3 hover:bg-slate-200/80 dark:hover:bg-slate-700/80"
+              data-collapse-toggle="dropdown-example"
+            >
+              <svg
+                class="flex-shrink-0 w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"
+                />
+                <path
+                  d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"
+                />
+              </svg>
+              <span class="block truncate">Links</span>
+              <svg
+                class="flex-shrink-0 w-6 h-6 ml-auto"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <ul id="dropdown-example" class="hidden py-2 space-y-2">
+              <li class="ml-11">
+                <a
+                  href="#"
+                  class="flex items-center w-full p-2 capitalize rounded-lg hover:bg-slate-200/80 dark:hover:bg-slate-700/80"
+                  >link 1</a
+                >
+              </li>
+              <li class="ml-11">
+                <a
+                  href="#"
+                  class="flex items-center w-full p-2 capitalize rounded-lg hover:bg-slate-200/80 dark:hover:bg-slate-700/80"
+                  >link 2</a
+                >
+              </li>
+              <li class="ml-11">
+                <a
+                  href="#"
+                  class="flex items-center w-full p-2 capitalize rounded-lg hover:bg-slate-200/80 dark:hover:bg-slate-700/80"
+                  >link 3</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 rounded-lg gap-x-3 hover:bg-slate-200/80 dark:hover:bg-slate-700/80"
+            >
+              <svg
+                aria-hidden="true"
+                class="flex-shrink-0 w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span>Link</span>
+            </a>
+          </li>
+        </ul>
+
+        <footer
+          class="sticky bottom-0 flex items-center overflow-hidden shadow-[0_0_2px_0] bg-inherit shadow-primary dark:shadow-primary-reverse"
+        >
+          <div
+            class="flex items-center justify-between w-full p-4 overflow-hidden"
+          >
+            <span
+              class="block w-full text-xs font-medium text-center capitalize text-wrap"
+              >made with
+              <span class="text-pink-500 dark:text-pink-600">❤</span>
+              by
+              <span class="dark:text-primary-reverse text-default">danie</span>
+              using
+              <a
+                target="_blank"
+                href="https://tailwindcss.com/"
+                class="normal-case dark:text-[#38BDF8] text-[#0e2f3d]"
+                >Tailwind CSS</a
+              >
+            </span>
+          </div>
+        </footer>
+      </aside>
+      <!-- End Sidebar -->
+
+      <!-- Header -->
+      <header
+        class="sticky top-0 z-30 dark:bg-secondary/75 bg-secondary-reverse/75 backdrop-blur-sm"
+      >
+        <div class="flex items-center justify-between w-full">
+          <div class="p-4">
+            <!-- Toggle sidebar (2) -->
+            <button type="button" class="toggle-sidebar lg:invisible">
+              <svg
+                class="w-8 h-8"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+              <div class="sr-only">Toggle Sidebar</div>
+            </button>
+            <!-- End toggle sidebar (2) -->
+          </div>
+
+          <div class="flex pr-4 lg:pr-6">
+            <div class="flex flex-row items-center">
+              <!-- Dark mode toggle -->
+              <button
+                id="theme-toggle"
+                type="button"
+                class="flex group text-gray-500 overflow-hidden dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+              >
+                <svg
+                  id="theme-toggle-dark-icon"
+                  class="hidden w-5 h-5 transition group-hover:-rotate-90"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+                <svg
+                  id="theme-toggle-light-icon"
+                  class="hidden w-5 h-5 transition group-hover:rotate-180"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <!-- End dark mode toggle -->
+            </div>
+
+            <!-- Avatar -->
+            <div
+              class="flex items-center font-sans cursor-pointer gap-x-2"
+              data-dropdown-toggle="userDropdown"
+            >
+              <div class="w-24 text-right">
+                <span class="block font-medium capitalize truncate">danie</span>
+                <span
+                  class="block text-xs text-gray-500 capitalize truncate dark:text-gray-400"
+                  >admin</span
+                >
+              </div>
+
+              <div
+                class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600"
+              >
+                <svg
+                  class="absolute w-12 h-12 text-gray-400 -left-1"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+
+              <!-- Avatar dropdown -->
+              <div
+                id="userDropdown"
+                class="z-30 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                  <div class="capitalize truncate">danie</div>
+                  <div class="font-medium truncate">admin@admin.com</div>
+                </div>
+                <ul
+                  class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                  aria-labelledby="avatarButton"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Dashboard</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Settings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Earnings</a
+                    >
+                  </li>
+                </ul>
+                <div class="py-1">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+              <!-- End avatar dropdown -->
+            </div>
+            <!-- End avatar -->
+          </div>
+        </div>
+      </header>
+      <!-- End header -->
+
+      <!-- Main content -->
+      <main class="p-6">
+        <div class="flex flex-col items-center w-full gap-2 mb-4 sm:flex-row">
+          <h1 class="w-full">Title</h1>
+
+          <!-- Breadcrumb -->
+          <div class="flex flex-col justify-end w-full sm:flex-row">
+            <nav class="flex" aria-label="Breadcrumb">
+              <ol class="flex flex-wrap items-center space-x-1 text-sm">
+                <li class="hover:brightness-125">
+                  <a href="#" class="flex items-center space-x-1 font-medium">
+                    <svg
+                      class="w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                      ></path>
+                    </svg>
+                    <span>Home</span>
+                  </a>
+                </li>
+
+                <div class="flex items-center">
+                  <svg
+                    class="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+
+                <li class="hover:brightness-125">
+                  <div class="flex items-center">
+                    <a href="#" class="font-medium">Dashboard</a>
+                  </div>
+                </li>
+
+                <div class="flex items-center">
+                  <svg
+                    class="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+
+                <li aria-current="page">
+                  <div class="flex items-center">
+                    <span>Here</span>
+                  </div>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <!-- End breadcrumb -->
+        </div>
+
+        <div
+          class="p-4 rounded-2xl bg-secondary-reverse dark:bg-secondary min-h-[128px] max-h-full"
+        >
+          <span class="w-full h-full">Hello World!</span>
+        </div>
+      </main>
+      <!-- End main content -->
+    </div>
+
+    <!-- Sidebar script -->
+    <script>
+      const toggleSidebar = document.getElementsByClassName("toggle-sidebar");
+      const sidebar = document.querySelector("#sidebar");
+
+      // create backdrop for sidebar
+      var backdropSidebar = document.createElement("div");
+      backdropSidebar.style.cssText =
+        "display:none;position:fixed;width:100vw;height:100vh;z-index:40;background-color:rgba(51,65,85,0.5);";
+      sidebar.insertAdjacentElement("afterend", backdropSidebar);
+
+      // toggle sidebar
+      function toggleSidebarFunc() {
+        backdropSidebar.style.display =
+          backdropSidebar.style.display === "none" ? "block" : "none";
+        sidebar.classList.toggle("translate-x-0");
+      }
+
+      // action toggle
+      backdropSidebar.addEventListener("click", function () {
+        toggleSidebarFunc();
+      });
+
+      for (let item of toggleSidebar) {
+        item.addEventListener("click", function () {
+          toggleSidebarFunc();
+        });
+      }
+    </script>
+
+    <!-- Flowbite script -->
+    <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+
+    <!-- Darkmode function -->
+    <script>
+      var themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon"
+      );
+      var themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon"
+      );
+
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      var themeToggleBtn = document.getElementById("theme-toggle");
+
+      themeToggleBtn.addEventListener("click", function () {
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
+        }
+      });
+    </script>
+
+    <!-- Darkmode action -->
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </body>
+</html>
